@@ -66,7 +66,10 @@ fn run_cycles(amount_of_cycles: usize) -> u64 {
     maxes.push(own_max);
 
     let overall_max = *maxes.iter().max().unwrap();
-    println!("Max ammount of 0: {}", overall_max);
+
+     // Note: Due to the abstract nature of the randomization, a value of zero is associated with
+     // getting a proper value of 1
+     println!("Max ammount of 1: {}", overall_max);
 
     let stop = start.elapsed();
     println!("Time taken: {:?}", stop)
@@ -95,7 +98,9 @@ fn solution_v1(){
     }
 
 
-    println!("Max ammount of 0: {}", max_count_of_0);
+    // Note: Due to the abstract nature of the randomization, a value of zero is associated with
+    // getting a proper value of 1
+    println!("Max ammount of 1: {}", max_count_of_0);
     let stop = start.elapsed();
     println!("Time taken: {:?}", stop);
 }
