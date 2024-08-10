@@ -32,6 +32,9 @@ fn run_cycles(amount_of_cycles: usize) -> u64 {
     for _ in 1..=amount_of_cycles {
         let mut count_of_0: u64 = 0;
         for _ in 1..=231 {
+            // Minor note: Rust already utilizes bitwise
+            // anding for calculating modulo of powers of two,
+            // so x % 4 is performance-wise equivalent to x & 3
             let next = sequence.read_u64() % 4;
             if next == 0 { count_of_0 += 1 }
         }
